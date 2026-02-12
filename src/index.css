@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* HSL Color Space */
+  /* Background: Deep Midnight Blue */
+  --background: 222 47% 11%;
+  --foreground: 45 30% 96%; /* Soft off-white/gold tint */
+
+  /* Primary: Warm Gold */
+  --primary: 48 100% 50%; /* #FFD700 */
+  --primary-foreground: 222 47% 11%;
+
+  /* Secondary: Deep Purple/Blue glass */
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 210 40% 98%;
+
+  /* Muted: Subtle blue-grey */
+  --muted: 217 33% 20%;
+  --muted-foreground: 215 20% 65%;
+
+  /* Accent: Emerald Green for success/worship */
+  --accent: 142 56% 51%; /* #50C878 (Emerald) */
+  --accent-foreground: 0 0% 100%;
+
+  /* Destructive: Soft Red */
+  --destructive: 0 62% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Borders: Thin gold/white glass borders */
+  --border: 217 33% 25%;
+  --input: 217 33% 25%;
+  --ring: 48 100% 50%;
+
+  --radius: 1rem;
+
+  /* Custom Fonts */
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+}
+
+
+
+/* Custom Utilities for Glassmorphism & Glow */
+@layer utilities {
+  .glass-card {
+    @apply bg-slate-900/60 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .glass-panel-green {
+    @apply bg-emerald-900/20 backdrop-blur-md border border-emerald-500/20;
+  }
+  
+  .glass-panel-red {
+    @apply bg-red-900/20 backdrop-blur-md border border-red-500/20;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  }
+  
+  .box-glow {
+    box-shadow: 0 0 25px -5px rgba(255, 215, 0, 0.15);
+  }
+
+  /* Starry Background Animation */
+  .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: 
+      radial-gradient(1px 1px at 20px 30px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 40px 70px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 50px 160px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 90px 40px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+      radial-gradient(1.5px 1.5px at 160px 120px, #ffffff, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite linear;
+    opacity: 0.3;
+  }
+  
+  @keyframes twinkle {
+    0% { opacity: 0.3; transform: translateY(0); }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.3; transform: translateY(-20px); }
+  }
+}
+
+@keyframes pulseFire {
+  0% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347, 0 0 20px #ff8c00; }
+  50% { text-shadow: 0 0 10px #ff6347, 0 0 15px #ff4500, 0 0 30px #ffa500; }
+  100% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347, 0 0 20px #ff8c00; }
+}
+
+.animate-pulseFire {
+  animation: pulseFire 1s infinite alternate;
+}
+@media(max-width: 400){
+
+  .ramada-counter-con{
+      width: 50%;
+      margin: auto;
+  }
+  
+  .ramadan-numbers{
+    display: flex;
+    flex-direction: column;
+  }
+}
