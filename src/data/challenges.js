@@ -9,7 +9,7 @@ export const challengesData = [
     points: 100,
     hardMode: {
       title: "قيام الليل المطوّل",
-      description: "صلاة 4 ركعات على الأقل قبل الفجر بتركيز وخشوع",
+      description: "صلاة 4 ركعات قبل الفجر بخشوع وخشوع زائد",
       points: 200
     }
   },
@@ -18,7 +18,7 @@ export const challengesData = [
     day: 2,
     title: "ذكر الله",
     description: "ترديد الأذكار المأثورة 100 مرة",
-    spiritualBenefit: "ألا بذكر الله تطمئن القلوب.",
+    spiritualBenefit: "قال ﷺ: «كلمتان خفيفتان على اللسان سبحان الله وبحمده سبحان الله العظيم» (البخاري). تجلب الطمأنينة والسكينة للقلب.",
     warningReminder: "الغفلة عن ذكر الله تضيق الصدر.",
     points: 80,
     hardMode: {
@@ -32,7 +32,7 @@ export const challengesData = [
     day: 3,
     title: "صلاة الضحى",
     description: "صلاة ركعتين بعد شروق الشمس",
-    spiritualBenefit: "صلاة الضحى بركة للرزق",
+    spiritualBenefit: "صلاة الضحى بركة للرزق.",
     warningReminder: "تضييع هذه الصلاة يفوتك فضلها الكبير",
     points: 90,
     hardMode: {
@@ -44,23 +44,9 @@ export const challengesData = [
   {
     id: 4,
     day: 4,
-    title: "صدقة صغيرة",
-    description: "التصدق بقطعة صغيرة من مالك",
-    spiritualBenefit: "الصدقة ترفع البلاء وتزيد البركة",
-    warningReminder: "تضييع الصدقة يقسي القلب",
-    points: 70,
-    hardMode: {
-      title: "صدقة كبيرة",
-      description: "التصدق بمبلغ كبير أو تقديم دعم لمحتاج",
-      points: 150
-    }
-  },
-  {
-    id: 5,
-    day: 5,
     title: "قراءة قرآن",
     description: "قراءة 5 صفحات من القرآن بتدبر",
-    spiritualBenefit: "تزيد الحسنات وتغذي الروح",
+    spiritualBenefit: "قال ﷺ: 'خيركم من تعلم القرآن وعلمه'. تزيد الحسنات وتغذي الروح.",
     warningReminder: "تأجيل قراءة القرآن يفوت أجره",
     points: 100,
     hardMode: {
@@ -70,87 +56,101 @@ export const challengesData = [
     }
   },
   {
-    id: 6,
-    day: 6,
-    title: "صلاة التراويح",
-    description: "أداء ركعات التراويح بخشوع",
-    spiritualBenefit: "تضاعف الحسنات في رمضان",
-    warningReminder: "تضييع التراويح يقلل أجر الشهر",
-    points: 120,
-    hardMode: {
-      title: "تراويح مطوّلة",
-      description: "صلاة جميع الركعات مع قراءة أجزاء من القرآن",
-      points: 250
-    }
-  },
-  {
-    id: 7,
-    day: 7,
-    title: "الإفطار مع العائلة",
-    description: "تجهيز إفطار صحي للعائلة أو صائم",
-    spiritualBenefit: "بركة في الأجر وتقوية الروابط",
-    warningReminder: "إهمال الإفطار يقلل من روحانية الشهر",
-    points: 80,
-    hardMode: {
-      title: "إفطار جماعي",
-      description: "إعداد وجبة كاملة لعدة صائمين",
-      points: 160
-    }
-  },
-  {
-    id: 8,
-    day: 8,
-    title: "الدعاء في السجود",
-    description: "الدعاء بقلب خاشع أثناء السجود 10 مرات",
-    spiritualBenefit: "قرب من الله وزيادة التوفيق",
-    warningReminder: "إهمال الدعاء يفوت فضل السجود",
+    id: 5,
+    day: 5,
+    title: "صلاة على النبي ﷺ",
+    description: "الصلاة على النبي ﷺ 10 مرات",
+    spiritualBenefit: "قال ﷺ: 'من صلى عليّ صلاة واحدة صلى الله عليه بها عشرًا' (مسلم)",
+    warningReminder: "تضييع هذه الصلاة يقلل من أجر الصلاة على النبي ﷺ",
     points: 70,
     hardMode: {
-      title: "الدعاء المطوّل",
-      description: "الدعاء 30 مرة مع خشوع وتفكر",
+      title: "صلاة على النبي المطوّلة",
+      description: "الصلاة على النبي ﷺ 50 مرة بخشوع",
       points: 140
     }
   },
   {
-    id: 9,
-    day: 9,
+    id: 6,
+    day: 6,
     title: "صيام تطوعي",
-    description: "صيام يوم تطوعي قبل رمضان أو بعده",
-    spiritualBenefit: "زيادة الأجر والتحلية بالنفس",
+    description: "صيام نصف يوم أو يوم تطوعي",
+    spiritualBenefit: "قال ﷺ: 'صيام يوم عرفة يكفر سنتين' (مسلم). زيادة الأجر والتحلية بالنفس",
     warningReminder: "إهمال الصيام التطوعي يقلل من الفضل",
     points: 100,
     hardMode: {
-      title: "صيام مطوّل",
+      title: "صيام كامل",
       description: "صيام يوم كامل من الفجر للغروب بتركيز ونية صافية",
       points: 200
     }
   },
   {
-    id: 10,
-    day: 10,
-    title: "زيارة الأهل",
-    description: "زيارة قريب أو جار وتقديم دعاء لهم",
-    spiritualBenefit: "صلة الرحم تزيد الحسنات",
-    warningReminder: "قطع الأرحام يبعد البركة",
+    id: 7,
+    day: 7,
+    title: "صلاة نافلة",
+    description: "صلاة ركعتين نافلة بعد العصر",
+    spiritualBenefit: "قال ﷺ: 'من صلى ركعتين بعد العصر غفر له ما بين العصر والمغرب' (ابن ماجه)",
+    warningReminder: "ترك النوافل يفوت أجرها",
     points: 60,
     hardMode: {
-      title: "صلة أرحام مطوّلة",
-      description: "زيارة عدة أقارب مع الدعاء والصدقة لهم",
+      title: "صلاة نافلة مطوّلة",
+      description: "صلاة 4 ركعات نافلة بخشوع",
+      points: 120
+    }
+  },
+  {
+    id: 8,
+    day: 8,
+    title: "استغفار",
+    description: "الاستغفار 100 مرة خلال اليوم",
+    spiritualBenefit: "قال ﷺ: 'من قال استغفر الله، غفرت له ذنوبه وإن كان فر من الزحف' (أبو داود). تكفير الذنوب وزيادة الحسنات",
+    warningReminder: "نسيان الاستغفار يقلل من الأجر",
+    points: 80,
+    hardMode: {
+      title: "استغفار مكثف",
+      description: "الاستغفار 300 مرة مع التفكر",
+      points: 160
+    }
+  },
+  {
+    id: 9,
+    day: 9,
+    title: "تسبيح وتهليل",
+    description: "ترديد سبحان الله والحمد لله والله أكبر 100 مرة",
+    spiritualBenefit: "قال ﷺ: «أكثروا من التسبيح والتكبير والتحميد» (ابن ماجه). يقوي القلب ويزيد القرب من الله",
+    warningReminder: "إهمال التسبيح يقلل الأجر",
+    points: 80,
+    hardMode: {
+      title: "تسبيح مكثف",
+      description: "ترديد التسبيح 300 مرة بخشوع",
+      points: 160
+    }
+  },
+  {
+    id: 10,
+    day: 10,
+    title: "الإفطار بتمر أو ماء",
+    description: "بدء الإفطار بتمرة أو ماء قبل أي طعام آخر",
+    spiritualBenefit: "قال ﷺ: 'إذا أفطر أحدكم فليفطر على رطبة، فإن لم يجد فعلى ماء' (أبو داود). يعزز الصحة والروحانية",
+    warningReminder: "الإفطار مباشرة على الطعام يقلل الفائدة الروحية",
+    points: 60,
+    hardMode: {
+      title: "الإفطار الصائب",
+      description: "الإفطار بتمر أو ماء + دعاء قبل الأكل",
       points: 120
     }
   },
   {
     id: 11,
     day: 11,
-    title: "ذكر الصباح والمساء",
-    description: "ترديد الأذكار اليومية كاملة",
-    spiritualBenefit: "تحفظ من الشرور وتزيد الطمأنينة",
-    warningReminder: "نسيان الأذكار يقلل الحماية",
-    points: 80,
+    title: "قراءة حديث",
+    description: "قراءة حديث صحيح مع تفسيره",
+    spiritualBenefit: "قال ﷺ: 'طلب العلم فريضة على كل مسلم' (ابن ماجه). يزيد العلم والورع",
+    warningReminder: "تضييع العلم يقلل الفهم",
+    points: 70,
     hardMode: {
-      title: "ذكر متكامل",
-      description: "ترديد الأذكار 3 مرات مع خشوع",
-      points: 160
+      title: "قراءة حديث موسع",
+      description: "قراءة 3 أحاديث مع التأمل في معانيها",
+      points: 140
     }
   },
   {
@@ -158,7 +158,7 @@ export const challengesData = [
     day: 12,
     title: "حفظ آية",
     description: "حفظ آية جديدة من القرآن",
-    spiritualBenefit: "يزيد الحفظ ويقوي القلب",
+    spiritualBenefit: "قال ﷺ: 'خيركم من تعلم القرآن وعلمه'. يزيد الحفظ ويقوي القلب",
     warningReminder: "تضييع الحفظ يقلل الأجر",
     points: 90,
     hardMode: {
@@ -170,57 +170,57 @@ export const challengesData = [
   {
     id: 13,
     day: 13,
-    title: "إطعام جار محتاج",
-    description: "إعطاء طعام لجارك المحتاج",
-    spiritualBenefit: "صدقة مستمرة وبركة في المنزل",
-    warningReminder: "إهمال الجار يقلل من الأجر",
-    points: 100,
+    title: "مراجعة ما حفظته",
+    description: "مراجعة ما تم حفظه من القرآن أو الأذكار",
+    spiritualBenefit: "قال ﷺ: 'راجعوا ما حفظتم من القرآن' (ابن ماجه). ترسيخ العلم وزيادة الأجر",
+    warningReminder: "نسيان المراجعة يقلل الأجر",
+    points: 80,
     hardMode: {
-      title: "إطعام جماعي",
-      description: "إطعام عدة جيران محتاجين أو أسرة فقيرة",
-      points: 200
+      title: "مراجعة مكثفة",
+      description: "مراجعة عدة آيات أو أذكار بتركيز",
+      points: 160
     }
   },
   {
     id: 14,
     day: 14,
-    title: "قراءة حديث",
-    description: "قراءة حديث صحيح مع تفسيره",
-    spiritualBenefit: "زيادة العلم والورع",
-    warningReminder: "تضييع العلم يقلل الفهم",
+    title: "التصدق بالأفعال",
+    description: "فعل معروف أو مساعدة شخص بدون مقابل",
+    spiritualBenefit: "قال ﷺ: 'أحب الناس إلى الله أنفعهم للناس' (البيهقي). يرفع الأجر ويقوي الأخلاق",
+    warningReminder: "إهمال مساعدة الآخرين يقلل من الأجر",
     points: 70,
     hardMode: {
-      title: "قراءة حديث موسع",
-      description: "قراءة 3 أحاديث مع التأمل في معانيها",
+      title: "تصدق موسع",
+      description: "مساعدة عدة أشخاص أو خدمة جماعية",
       points: 140
     }
   },
   {
     id: 15,
     day: 15,
-    title: "صلاة نافلة",
-    description: "صلاة 2 ركعة نافلة بعد العصر",
-    spiritualBenefit: "تكسب حسنات إضافية",
-    warningReminder: "ترك النوافل يفوت أجرها",
+    title: "صلة الأرحام",
+    description: "الاتصال أو زيارة قريب للاطمئنان عليه",
+    spiritualBenefit: "قال ﷺ: 'من أحب أن يُبسط له في رزقه ويُنسأ له في أثره فليصل رحمه' (البخاري ومسلم). زيادة الحسنات",
+    warningReminder: "قطع العلاقات يقلل الأجر",
     points: 60,
     hardMode: {
-      title: "صلاة نافلة مطوّلة",
-      description: "صلاة 4 ركعات نافلة بخشوع",
+      title: "صلة أرحام موسعة",
+      description: "زيارة أو اتصال بعدد أكبر من الأقارب مع الدعاء لهم",
       points: 120
     }
   },
   {
     id: 16,
     day: 16,
-    title: "التصدق بالملابس",
-    description: "التبرع بملابس نظيفة لمحتاج",
-    spiritualBenefit: "ينفع الفقراء ويزيد الأجر",
-    warningReminder: "تراكم الملابس وعدم التصدق يقلل الأجر",
-    points: 70,
+    title: "التهجد",
+    description: "القيام بصلاة الليل بعد منتصف الليل",
+    spiritualBenefit: "قال ﷺ: 'من قام رمضان إيمانًا واحتسابًا غفر له ما تقدم من ذنبه' (البخاري ومسلم). زيادة القرب من الله",
+    warningReminder: "ترك التهجد يفوت الأجر",
+    points: 120,
     hardMode: {
-      title: "تصدق موسع",
-      description: "التبرع بعدة قطع مع ترتيبها بعناية",
-      points: 140
+      title: "تهجد أطول",
+      description: "صلاة ركعات مطولة وقراءة القرآن أثناء الليل",
+      points: 250
     }
   },
   {
@@ -228,7 +228,7 @@ export const challengesData = [
     day: 17,
     title: "دعاء بعد الصلاة",
     description: "الدعاء بنية صادقة بعد كل صلاة",
-    spiritualBenefit: "يزيد القرب من الله",
+    spiritualBenefit: "قال ﷺ: 'الدعاء هو العبادة' (الترمذي). يزيد القرب من الله",
     warningReminder: "تضييع الدعاء بعد الصلاة يقلل الأجر",
     points: 60,
     hardMode: {
@@ -240,65 +240,51 @@ export const challengesData = [
   {
     id: 18,
     day: 18,
-    title: "الاستغفار",
-    description: "الاستغفار 100 مرة خلال اليوم",
-    spiritualBenefit: "تكفير الذنوب وزيادة الحسنات",
-    warningReminder: "نسيان الاستغفار يقلل من الأجر",
-    points: 80,
+    title: "صيام يوم بيوم تمرة",
+    description: "صيام نصف يوم مع الإفطار على تمر فقط",
+    spiritualBenefit: "قال ﷺ: 'أفضل الصيام ما صام الرجل يومًا في سبيل الله' (البخاري). تعلم ضبط النفس وزيادة الأجر",
+    warningReminder: "الإفراط في الطعام يقلل الفائدة الروحية",
+    points: 70,
     hardMode: {
-      title: "استغفار مكثف",
-      description: "الاستغفار 300 مرة مع التفكر",
-      points: 160
+      title: "صيام يوم كامل",
+      description: "صيام يوم كامل مع التركيز على النية والخشوع",
+      points: 140
     }
   },
-  {
+{
     id: 19,
     day: 19,
-    title: "صلة الأرحام بالهاتف",
-    description: "الاتصال بأقاربك للاطمئنان عليهم",
-    spiritualBenefit: "تعزيز الروابط الأسرية والأجر",
-    warningReminder: "قطع العلاقات يقلل الأجر",
-    points: 50,
+    title: "صدقة غذائية",
+    description: "إعداد وجبة أو تقديم طعام لمحتاج",
+    spiritualBenefit: "قال ﷺ: 'ما من يوم يصبح العباد إلا ملكان ينزلان فيقولان: اللهم أعط منفقًا خلفًا، اللهم أعط ممسكًا تلفًا' (متفق عليه). زيادة الحسنات والبركة",
+    warningReminder: "تضييع الفرصة يقلل الأجر",
+    points: 100,
     hardMode: {
-      title: "صلة أرحام موسعة",
-      description: "الاتصال بعدد أكبر من الأقارب مع الدعاء لهم",
-      points: 100
+      title: "صدقة جماعية",
+      description: "تقديم وجبات لمجموعة من المحتاجين",
+      points: 200
     }
   },
   {
     id: 20,
     day: 20,
-    title: "تلاوة سورة قصيرة",
-    description: "تلاوة سورة قصيرة مع التدبر",
-    spiritualBenefit: "زيادة الحسنات والتقوى",
-    warningReminder: "إهمال التلاوة يفوت الأجر",
-    points: 90,
+    title: "قراءة سورة قصيرة قبل النوم",
+    description: "قراءة سورة قصيرة قبل النوم مع التفكر",
+    spiritualBenefit: "قال ﷺ: 'اقرأوا القرآن فإنه يأتي يوم القيامة شفيعًا لأصحابه' (مسلم). تريح القلب وتزيد الأجر",
+    warningReminder: "إهمال القراءة يقلل الأجر",
+    points: 70,
     hardMode: {
-      title: "تلاوة مكثفة",
-      description: "تلاوة سورة كاملة بتركيز وخشوع",
-      points: 180
+      title: "قراءة موسعة قبل النوم",
+      description: "قراءة سورة كاملة قبل النوم بتركيز",
+      points: 140
     }
   },
   {
     id: 21,
     day: 21,
-    title: "التهجد",
-    description: "القيام بصلاة الليل في منتصف الليل",
-    spiritualBenefit: "قرب من الله وزيادة الثواب",
-    warningReminder: "ترك التهجد يفوت الأجر",
-    points: 120,
-    hardMode: {
-      title: "تهجد أطول",
-      description: "صلاة ركعات مطولة وقراءة القرآن أثناء الليل",
-      points: 250
-    }
-  },
-  {
-    id: 22,
-    day: 22,
     title: "الإحسان إلى الجار",
     description: "مساعدة جار أو تقديم خدمة له",
-    spiritualBenefit: "زيادة البركة في المنزل",
+    spiritualBenefit: "قال ﷺ: 'ما زال جبريل يوصيني بالجار حتى ظننت أنه سيورثه' (البخاري ومسلم). زيادة البركة في المنزل",
     warningReminder: "إهمال الجار يقلل من الأجر",
     points: 70,
     hardMode: {
@@ -308,17 +294,31 @@ export const challengesData = [
     }
   },
   {
-    id: 23,
-    day: 23,
-    title: "صلاة السنة",
-    description: "صلاة ركعتين سنة الفجر بخشوع",
-    spiritualBenefit: "تكمل الفريضة وتزيد الحسنات",
-    warningReminder: "تركها يقلل من الأجر",
+    id: 22,
+    day: 22,
+    title: "زيارة الأهل",
+    description: "زيارة قريب أو جار وتقديم دعاء لهم",
+    spiritualBenefit: "قال ﷺ: 'من أحب أن يُبسط له في رزقه ويُنسأ له في أثره فليصل رحمه' (البخاري ومسلم). زيادة الحسنات",
+    warningReminder: "قطع الأرحام يبعد البركة",
     points: 60,
     hardMode: {
-      title: "صلاة سنة أطول",
-      description: "صلاة 4 ركعات سنة الفجر بخشوع وخشوع",
+      title: "صلة أرحام مطوّلة",
+      description: "زيارة عدة أقارب مع الدعاء والصدقة لهم",
       points: 120
+    }
+  },
+  {
+    id: 23,
+    day: 23,
+    title: "التصدق بالملابس",
+    description: "التبرع بملابس نظيفة لمحتاج",
+    spiritualBenefit: "قال ﷺ: 'أقرب ما يكون العبد من ربه وهو ساجد، فأكثروا الدعاء' (مسلم). الصدقة تعين على البر والتقوى",
+    warningReminder: "تراكم الملابس وعدم التصدق يقلل الأجر",
+    points: 70,
+    hardMode: {
+      title: "تصدق موسع",
+      description: "التبرع بعدة قطع مع ترتيبها بعناية",
+      points: 140
     }
   },
   {
@@ -326,7 +326,7 @@ export const challengesData = [
     day: 24,
     title: "قراءة تفسير آية",
     description: "قراءة تفسير آية من القرآن",
-    spiritualBenefit: "يزيد العلم والمعرفة",
+    spiritualBenefit: "قال ﷺ: 'خيركم من تعلم القرآن وعلمه' (البخاري ومسلم). يزيد العلم والمعرفة",
     warningReminder: "إهمال العلم يقلل الأجر",
     points: 70,
     hardMode: {
@@ -338,9 +338,9 @@ export const challengesData = [
   {
     id: 25,
     day: 25,
-    title: "دعاء بعد الإفطار",
+    title: "الدعاء عند الإفطار",
     description: "الدعاء عند إفطار الصائم",
-    spiritualBenefit: "قرب من الله وثواب عظيم",
+    spiritualBenefit: "قال ﷺ: 'الصائم حين يفطر يدعوه ثلاثًا لا يرد له' (الترمذي). قرب من الله وثواب عظيم",
     warningReminder: "نسيان الدعاء يقلل الأجر",
     points: 60,
     hardMode: {
@@ -352,57 +352,57 @@ export const challengesData = [
   {
     id: 26,
     day: 26,
-    title: "مراجعة ما حفظته",
-    description: "مراجعة ما تم حفظه من القرآن أو الأذكار",
-    spiritualBenefit: "ترسيخ العلم وزيادة الأجر",
-    warningReminder: "نسيان المراجعة يقلل الأجر",
-    points: 80,
+    title: "صلاة التراويح",
+    description: "أداء ركعات التراويح بخشوع",
+    spiritualBenefit: "قال ﷺ: 'من قام رمضان إيمانًا واحتسابًا غفر له ما تقدم من ذنبه' (البخاري ومسلم). تضاعف الحسنات في رمضان",
+    warningReminder: "تضييع التراويح يقلل أجر الشهر",
+    points: 120,
     hardMode: {
-      title: "مراجعة مكثفة",
-      description: "مراجعة عدة آيات أو أذكار بتركيز",
-      points: 160
+      title: "تراويح مطوّلة",
+      description: "صلاة جميع الركعات مع قراءة أجزاء من القرآن",
+      points: 250
     }
   },
   {
     id: 27,
     day: 27,
-    title: "صدقة غذائية",
-    description: "إعداد وجبة أو تقديم طعام لمحتاج",
-    spiritualBenefit: "زيادة الحسنات والبركة",
-    warningReminder: "تضييع الفرصة يقلل الأجر",
-    points: 100,
+    title: "قراءة حديث مع تفسيره",
+    description: "قراءة حديث صحيح وفهم معناه",
+    spiritualBenefit: "قال ﷺ: 'طلب العلم فريضة على كل مسلم' (ابن ماجه). زيادة العلم والورع",
+    warningReminder: "إهمال العلم يقلل الأجر",
+    points: 70,
     hardMode: {
-      title: "صدقة جماعية",
-      description: "تقديم وجبات لمجموعة من المحتاجين",
-      points: 200
+      title: "قراءة 3 أحاديث",
+      description: "قراءة 3 أحاديث مع التأمل في معانيها",
+      points: 140
     }
   },
   {
     id: 28,
     day: 28,
-    title: "التسبيح والتهليل",
-    description: "ترديد سبحان الله والحمد لله والله أكبر 100 مرة",
-    spiritualBenefit: "يطهر القلب ويزيد القرب من الله",
-    warningReminder: "إهمال التسبيح يقلل الأجر",
+    title: "ذكر الصباح والمساء",
+    description: "ترديد الأذكار اليومية كاملة",
+    spiritualBenefit: "قال ﷺ: 'أكثروا من التسبيح والتحميد والتهليل' (ابن ماجه). تحفظ من الشرور وتزيد الطمأنينة",
+    warningReminder: "نسيان الأذكار يقلل الحماية",
     points: 80,
     hardMode: {
-      title: "تسبيح مكثف",
-      description: "ترديد التسبيح 300 مرة بخشوع",
+      title: "ذكر متكامل",
+      description: "ترديد الأذكار 3 مرات مع خشوع",
       points: 160
     }
   },
   {
     id: 29,
     day: 29,
-    title: "قراءة سورة قصيرة قبل النوم",
-    description: "قراءة سورة قصيرة قبل النوم مع التفكر",
-    spiritualBenefit: "تريح القلب وتزيد الأجر",
-    warningReminder: "إهمال القراءة يقلل الأجر",
-    points: 70,
+    title: "صلاة السنة",
+    description: "صلاة ركعتين سنة الفجر بخشوع",
+    spiritualBenefit: "قال ﷺ: 'من صلى ركعتين قبل الفجر، كان له نور وبركة' (النسائي). تكمل الفريضة وتزيد الحسنات",
+    warningReminder: "تركها يقلل من الأجر",
+    points: 60,
     hardMode: {
-      title: "قراءة موسعة قبل النوم",
-      description: "قراءة سورة كاملة قبل النوم بتركيز",
-      points: 140
+      title: "صلاة سنة أطول",
+      description: "صلاة 4 ركعات سنة الفجر بخشوع",
+      points: 120
     }
   },
   {
@@ -410,7 +410,7 @@ export const challengesData = [
     day: 30,
     title: "ختام رمضان",
     description: "أداء صلاة التراويح والتهجد في الليلة الأخيرة",
-    spiritualBenefit: "ختم رمضان بعبادة يزيد القرب من الله",
+    spiritualBenefit: "قال ﷺ: 'ختم القرآن في رمضان أفضل الأعمال' (البيهقي). ختم رمضان بعبادة يزيد القرب من الله",
     warningReminder: "تضييع آخر أيام رمضان يقلل الأجر",
     points: 300,
     hardMode: {
