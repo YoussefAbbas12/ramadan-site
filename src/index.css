@@ -103,9 +103,27 @@
 }
 
 @keyframes pulseFire {
-  0% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347, 0 0 20px #ff8c00; }
-  50% { text-shadow: 0 0 10px #ff6347, 0 0 15px #ff4500, 0 0 30px #ffa500; }
-  100% { text-shadow: 0 0 5px #ff4500, 0 0 10px #ff6347, 0 0 20px #ff8c00; }
+  0% {
+    text-shadow: 
+      0 0 10px #ff4500,
+      0 0 20px #ff6347,
+      0 0 40px #ff8c00,
+      0 0 60px #ffa500;
+  }
+  50% {
+    text-shadow: 
+      0 0 20px #ff6347,
+      0 0 40px #ff4500,
+      0 0 60px #ff8c00,
+      0 0 80px #ffd700;
+  }
+  100% {
+    text-shadow: 
+      0 0 10px #ff4500,
+      0 0 20px #ff6347,
+      0 0 40px #ff8c00,
+      0 0 60px #ffa500;
+  }
 }
 
 .animate-pulseFire {
@@ -122,4 +140,25 @@
     display: flex;
     flex-direction: column;
   }
+}
+
+footer{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+footer p{
+  position: relative;
+  z-index: 10;
+  animation-name: pulseFire;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+footer p a{
+  text-decoration: underline;
 }
