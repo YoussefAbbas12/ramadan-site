@@ -434,6 +434,9 @@ const updateLog = (day, updates) => {
             </motion.div>
           </div>
         )}
+        <footer>
+          <p>هذا الموقع من تطوير الجوو ( <a href="https://wa.me/01027295412" target="_blank">Youssef abbas</a> )</p>
+        </footer>
       </AnimatePresence>
     </div>
   );
