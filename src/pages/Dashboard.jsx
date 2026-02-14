@@ -17,7 +17,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import 'react-circular-progressbar/dist/styles.css';
 import { challengesData } from "../data/challenges";
 
-const RAMADAN_START_DATE = new Date("2026-02-14T00:00:00");
+const RAMADAN_START_DATE = new Date("2026-02-18T00:00:00");
 
 export default function Dashboard() {
   const [tempName, setTempName] = useState("");
