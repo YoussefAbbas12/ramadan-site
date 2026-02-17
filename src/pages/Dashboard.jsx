@@ -21,6 +21,7 @@ const RAMADAN_START_DATE = new Date("2026-02-18T00:00:00");
 
 export default function Dashboard() {
   const [tempName, setTempName] = useState("");
+  const [result, setResult] = useState("");
 
   const [ramadanStarted, setRamadanStarted] = useState(false);
   const [userData, setUserData] = useState(() => {
