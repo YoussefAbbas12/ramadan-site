@@ -113,6 +113,33 @@ const updateLog = (day, updates) => {
   });
 };
 
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+    formData.append("access_key", "46db0722-b0fd-4bba-9641-715c8a7897a6");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      setResult("Error");
+    }
+    if (!tempName.trim()) return;
+    setTimeout(() => {
+      console.log("عدّى 5 ثواني");
+    }, 5000);
+    setUserData(prev => ({ ...prev, name: tempName.trim() }));
+
+  };
+
+
 
 
   const todayLog = getDayLog(todayDay);
@@ -138,28 +165,29 @@ const updateLog = (day, updates) => {
           هذا الموقع سيساعدك على تتبع صلواتك اليومية وإتمام تحديات رمضانية ممتعة.
           كل يوم يوجد تحدي جديد يمكنك تنفيذه للحصول على نقاط وأوسمة 🏆
         </p>
-        <input
-          type="text"
-          placeholder="اكتب اسمك هنا"
-          value={tempName}
-          onChange={(e) => setTempName(e.target.value)}
-          className="px-4 py-3 rounded-lg text-black w-72 md:w-96 mb-4"
-          style={{background:"transparent", border:"1px solid rgb(44 49 94)", color:"#fff"}}
-        />
-        <Button
-          size="lg"
-          onClick={() => {
-            if (!tempName.trim()) return;
-            setUserData(prev => ({ ...prev, name: tempName.trim() }));
-          }}
-          className="bg-yellow-500 text-black font-bold px-8 py-3 rounded-full"
-        >
-          تابع
-        </Button>
+        <form onSubmit={onSubmit}>
+          <input
+            type="text"
+            placeholder="اكتب اسمك هنا"
+            value={tempName}
+            name="userName"
+            onChange={(e) => setTempName(e.target.value)}
+            className="px-4 py-3 rounded-lg text-black w-72 md:w-96 mb-4"
+            style={{background:"transparent", border:"1px solid rgb(44 49 94)", color:"#fff"}}
+            required
+          />
+          <span>{result}</span>
+          <button
+            type="submit"
+            size="lg"
+            className="bg-yellow-500 text-black font-bold px-8 py-3 rounded-full"
+          >
+            تابع
+          </button>
+        </form>
       </div>
     );
   }
-
   return (
     <div className="relative min-h-screen overflow-x-hidden p-4 md:p-8" dir="rtl">
       <div className="fixed inset-0 pointer-events-none">
