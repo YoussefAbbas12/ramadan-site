@@ -18,12 +18,14 @@ import 'react-circular-progressbar/dist/styles.css';
 import { challengesData } from "../data/challenges";
 
 const RAMADAN_START_DATE = new Date("2026-02-19T00:00:00");
+const RAMADAN_END_DATE = new Date("2026-03-20T00:00:00");
+
 
 export default function Dashboard() {
   const [tempName, setTempName] = useState("");
-    const [hard, setHard] = useState(true);
-
+  const [hard, setHard] = useState(true);
   const [result, setResult] = useState("");
+  const [ramadanEnded, setRamadanEnded] = useState(false);
 
   const [ramadanStarted, setRamadanStarted] = useState(false);
   const [userData, setUserData] = useState(() => {
@@ -142,6 +144,49 @@ const updateLog = (day, updates) => {
 
   };
 
+  useEffect(() => {
+    const now = new Date();
+    if (now >= RAMADAN_END_DATE) setRamadanEnded(true);
+  }, []);
+
+
+   const generateCertificate = async () => {
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const image = new Image();
+    image.src = "certificate.png";
+    await new Promise(res => image.onload = res);
+
+    // تحميل الخط
+    const font = new FontFace("Kufam", "url(Kufam-VariableFont_wght.ttf)");
+    await font.load();
+    document.fonts.add(font);
+
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.drawImage(image, 0, 0);
+
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#000";
+
+    // الاسم
+    ctx.font = "50px Kufam";
+    ctx.fillText(userData.name || "اسم غير معروف", 1470, 850);
+
+    // عدد الأيام
+    ctx.fillStyle = "#1e6f5c";
+    ctx.font = "35px Kufam";
+    ctx.fillText( Object.values(userData.logs).filter(l => l.challengeCompleted).length , 1820, 1030); // عدد أيام رمضان
+  };
+
+  const downloadCertificate = () => {
+    const canvas = document.getElementById("canvas");
+    const link = document.createElement("a");
+    link.download = "شهادة_رمضان.png";
+    link.href = canvas.toDataURL("image/png");
+    link.click();
+  };
 
 
 
@@ -168,7 +213,7 @@ const updateLog = (day, updates) => {
           هذا الموقع سيساعدك على تتبع صلواتك اليومية وإتمام تحديات رمضانية ممتعة.
           كل يوم يوجد تحدي جديد يمكنك تنفيذه للحصول على نقاط وأوسمة 🏆
           <br />
-          ملحوظه : اكتب اسمك كويس عشان هيطلع ليك شهاده بالاسم ده في النهايه لو التزمت
+         ملحوظه : اكتب اسمك كويس عشان هيطلع ليك شهاده بالاسم ده في النهايه لو التزمت
         </p>
         <form onSubmit={onSubmit}>
           <input
@@ -214,6 +259,62 @@ const updateLog = (day, updates) => {
         <StatCard icon={<Flame className="text-orange-500" />} label="التتابع" value={`${userData.currentStreak} يوم`} color="border-orange-500/30" />
         <StatCard icon={<Trophy className="text-emerald-400" />} label="التحديات" value={Object.values(userData.logs).filter(l => l.challengeCompleted).length} color="border-emerald-500/30" />
       </header>
+      
+
+      {ramadanEnded ? (
+        <>
+          <h1 className="text-4xl relative font-bold text-yellow-500 mb-6">عيد فطر سعيد 🎉</h1>
+
+          <button onClick={generateCertificate} className="bg-yellow-500 relative px-6 py-3 rounded-lg m-2">
+            توليد الشهادة
+          </button>
+          <button onClick={downloadCertificate} className="bg-green-500 relative px-6 py-3 rounded-lg m-2">
+            تحميل الشهادة
+          </button>
+
+          <canvas id="canvas" className="mt-6 mx-auto border relative" />
+
+        <section className="space-y-4 relative mb-7">
+          <div className="flex justify-between items-center">
+            <h2 className="text-2xl font-serif text-yellow-500">تقويم رمضان</h2>
+            <span className="text-slate-400">اليوم {todayDay} من 30</span>
+          </div>
+          {/* التقويم */}
+          <div className="grid grid-cols-5 md:grid-cols-10 gap-2">
+            {[...Array(30)].map((_, i) => {
+              const day = i + 1;
+              const dayLog = getDayLog(day);
+              const isToday = day === todayDay;
+              
+              let bgColor = "bg-white/5";
+              let borderColor = "border-white/10";
+              if (dayLog.challengeCompleted) {
+                bgColor = "bg-emerald-500/20";
+                borderColor = "border-emerald-500/40";
+              } else if (day < todayDay) {
+                bgColor = "bg-yellow-500/10";
+                borderColor = "border-yellow-500/30";
+              }
+              if (isToday) borderColor = "border-yellow-500 ring-1 ring-yellow-500";
+
+              return (
+                <motion.button
+                  key={day}
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => setSelectedDay(day)}
+                  className={`aspect-square flex flex-col items-center justify-center rounded-xl border transition-all ${bgColor} ${borderColor}`}
+                >
+                  <span className="text-[10px] text-slate-500 mb-1">يوم</span>
+                  <span className="text-lg font-serif text-white">{day}</span>
+                </motion.button>
+              );
+            })}
+          </div>
+        </section>
+
+        </>
+      ) : (<>
+
 
       <Counter toDate="2026-03-19T00:00:00" counterTitle="الوقت المتبقي على عيد الفطر 🐑🥳 " />
 
@@ -419,14 +520,14 @@ const updateLog = (day, updates) => {
         <section className="space-y-4 pb-12">
           <h2 className="text-2xl font-serif text-yellow-500">أوسمة رمضان</h2>
           <div className="flex gap-4 overflow-x-auto pb-4 px-2">
-            <Medal icon="🥉" label="5 تحديات" target={5} current={Object.values(userData.logs).filter(l => l.challengeCompleted).length} />
-            <Medal icon="🥈" label="10 تحديات" target={10} current={Object.values(userData.logs).filter(l => l.challengeCompleted).length} />
             <Medal icon="🥇" label="15 تحدي" target={15} current={Object.values(userData.logs).filter(l => l.challengeCompleted).length} />
             <Medal icon="💎" label="20 تحدي" target={20} current={Object.values(userData.logs).filter(l => l.challengeCompleted).length} />
             <Medal icon="👑" label="ختام الشهر" target={30} current={Object.values(userData.logs).filter(l => l.challengeCompleted).length} />
           </div>
         </section>
       </main>
+      </>
+      )}
 
       <AnimatePresence>
         {selectedDay && (
@@ -468,7 +569,7 @@ const updateLog = (day, updates) => {
           </div>
         )}
         <footer>
-          <p> هذا الموقع من تطوير Youssef abbas <a href="https://wa.me/01027295412" target="_blank"><i className="fa-brands fa-whatsapp" style={{color: "rgba(22, 220, 39, 1.00)" , fontSize : "20px"}}></i></a> </p>
+          <p> هذا الموقع من تطوير Youssef abbas<a href="https://wa.me/01027295412" target="_blank"><i className="fa-brands fa-whatsapp" style={{color: "rgba(22, 220, 39, 1.00)" , fontSize : "20px"}}></i></a> </p>
         </footer>
       </AnimatePresence>
     </div>
