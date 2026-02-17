@@ -21,6 +21,8 @@ const RAMADAN_START_DATE = new Date("2026-02-18T00:00:00");
 
 export default function Dashboard() {
   const [tempName, setTempName] = useState("");
+    const [hard, setHard] = useState(true);
+
   const [result, setResult] = useState("");
 
   const [ramadanStarted, setRamadanStarted] = useState(false);
@@ -239,7 +241,7 @@ const updateLog = (day, updates) => {
   </p>
 
   {/* زر تحدي أصعب */}
-  {!todayLog.hardMode && todayChallenge?.hardMode && (
+  {hard?!todayLog.hardMode && todayChallenge?.hardMode && (
     <Button
       size="sm"
       onClick={() => {
@@ -249,18 +251,18 @@ const updateLog = (day, updates) => {
           logs: { ...prev.logs, [todayDay]: newLog }
         }));
       }}
-      className="w-full md:w-auto h-14 px-12 text-lg rounded-full transition-all mx-2"
+      className="w-full md:w-auto h-14 px-12 text-lg rounded-full transition-all mx-2 "
     >
       تحدي أصعب
     </Button>
-  )}
+  ):""}
 
   {/* زر أتممت التحدي */}
   <Button 
     size="lg"
     onClick={() => {
       if (todayLog.challengeCompleted) return;
-
+      setHard(false)
       const newLog = { ...todayLog, challengeCompleted: true };
 
       setUserData(prev => {
