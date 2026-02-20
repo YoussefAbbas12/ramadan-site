@@ -569,7 +569,7 @@ const updateLog = (day, updates) => {
           </div>
         )}
         <footer>
-          <p> هذا الموقع من تطوير Youssef abbas<a href="https://wa.me/01027295412" target="_blank"><i className="fa-brands fa-whatsapp" style={{color: "rgba(22, 220, 39, 1.00)" , fontSize : "20px"}}></i></a> </p>
+          <p> هذا الموقع من تطوير Youssef abbas<a href="https://wa.me/+201027295412" target="_blank"><i className="fa-brands fa-whatsapp" style={{color: "rgba(22, 220, 39, 1.00)" , fontSize : "20px"}}></i></a> </p>
         </footer>
       </AnimatePresence>
     </div>
